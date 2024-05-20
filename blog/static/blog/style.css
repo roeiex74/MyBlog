@@ -1,0 +1,53 @@
+body,
+html {
+  width: 100%;
+  margin: 0;
+}
+
+.split {
+  height: 50%;
+  width: 100%;
+  position: fixed;
+}
+.upper_half {
+  background-color: #4d869c;
+  top: 0;
+}
+.bottom_half {
+  background-color: #7ab2b2;
+  bottom: 0;
+}
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-15deg);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid whitesmoke;
+  padding: 2px;
+  margin: 5px;
+}
+.profile-picture img {
+  width: 10vw; /* Responsive width */
+  height: auto;
+  margin-right: 2vw; /* Responsive margin */
+}
+.profile-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  z-index: 1; /* Ensures content is above the background divs */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  padding: 2vw; /* Responsive padding */
+  border-radius: 10px;
+  max-width: 90%; /* Ensure it fits within the viewport */
+  box-sizing: border-box;
+}
+.profile-box h2 {
+  font-size: 2vw; /* Responsive font size */
+  color: #eef7ff;
+  margin: 1px;
+}
