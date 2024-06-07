@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %} 
+{% load static %}
+{% block title %}Stored Posts{% endblock %} 
+{%block css_file %}
+<link rel="stylesheet" href="{% static "blog/stored-posts.css" %}">
+{% endblock %} 
+{% block body %} 
+<section id="stored-posts">
+    {% if has_posts %}
+    <form class="stored-form" action="" method="POST">
+        {% csrf_token %}
+        <ul>
+            {% for post in posts %}
+            <div class="checkbox">
+                <label class="checkbox-wrapper">
+                    <li>
+                        <input type="checkbox" class="checkbox-input" name="selected_items" value="{{ post.id }}">
+                        <span class="checkbox-tile">
+                            <a class="post_content" href="{% url "post-data" post.slug%}">
+                                <h4>{{post.title}}</h4>
+                                <img src="{{post.image.url}}"/>
+                            </a>
+                        </span>
+                        
+                    </li>
+                </label>
+            </div>
+            {% endfor %}
+            
+        </ul>
+        <input type="hidden" name="action" value="remove-selected"/>
+        <button class="button-86" type="submit">Remove Selected</submit>
+    </form>
+    {% else %}
+        <p> There are no saved posts.. </p>
+    {% endif %}
+</section>
+{% endblock %}

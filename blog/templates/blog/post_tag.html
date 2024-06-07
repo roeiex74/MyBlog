@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% block page_title %}
+Posts by {{tag}} Tag
+{% endblock %}
+{% load static %}
+{% block css_file %}
+<link rel="stylesheet" href="{% static "blog/post_tag.css" %}"
+{% endblock%}
+
+{% block body %}
+    <section id="all-posts">
+        <h2> {{tag}} Post list</h2>
+        <ul>
+            {% for post_dict in posts %}
+            {% include "blog/includes/post.html" with post_data=post_dict %}
+            {% endfor %}
+    
+        </ul>
+    </section>
+{% endblock%}

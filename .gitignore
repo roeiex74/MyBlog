@@ -1,1 +1,13 @@
 __pycache__
+# Ignore the virtual environment folder
+django_site/
+
+# Ignore collected static files
+static/
+
+# Ignore other temporary files
+*.log
+*.pot
+*.mo
+*.compiled
+.DS_Store

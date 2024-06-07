@@ -1,0 +1,51 @@
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post</title>
+  <link rel="stylesheet" href="{% static "blog/post.css" %}">
+</head>
+<li>
+  <article class="post">
+    <a id="post-anchor" href="{% url "post-data" post_data.slug %}">
+        <section class="content_section">
+            <img src="{{post_data.image.url}}" />
+            <div class="post__content">
+                <h3>{{post_data.title}}</h3>
+                <div class="short__paragraph">
+                <p id="excerpt_paragraph">{{post_data.excerpt}}</p>
+                <p id="read-more"></p>
+                </div>
+            </div>
+        </section>
+    </a>
+  </article>
+</li>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const contentContainers = document.querySelectorAll(".post");
+
+        contentContainers.forEach(container => {
+            const contentParagraph = container.querySelector("#excerpt_paragraph");
+            const readMoreParagraph = container.querySelector("#read-more");
+            const anchor = container.querySelector("#post-anchor");
+            const height_section = container.querySelector(".content_section")
+            if (contentParagraph && readMoreParagraph) {
+                const anchorHeight = anchor.getBoundingClientRect().height;
+                const anchorStyle = window.getComputedStyle(anchor);
+                const paddingTop = parseFloat(anchorStyle.paddingTop);
+                const paddingBottom = parseFloat(anchorStyle.paddingBottom);
+
+                const hasOverflow = height_section.scrollHeight >= anchorHeight - paddingTop - paddingTop;
+                if (hasOverflow){
+                    readMoreParagraph.textContent = "Click to read more...";
+                    contentParagraph.classList.add("overflow");
+                }
+                
+
+                
+                
+            }
+        });
+    });
+</script>

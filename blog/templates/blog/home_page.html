@@ -1,12 +1,36 @@
-{% extends "base.html" %} {% load static %} {% block css_file %} <link
-rel="stylesheet" href="{% static "blog/style.css" %}"> {% endblock css_file %}
-{% block title %}Blog Home Page {%endblock title %} {% block body %}
-<div class="split upper_half"></div>
-<div class="split bottom_half"></div>
-<div class="profile-box">
-    <div class="profile-picture">
-      <img src="{% static "blog/images/IMG_4534.jpeg" %}" alt="My Photo">
-    </div>
-    <h2>Roei's </br> Blog</h2>
-  </div>
+{% extends "blog/base.html" %} {% load static %} {% block title %}Blog Home Page
+{%endblock title %} {% block css_file %}
+<!-- CSS FILE STYLE for home page-->
+<link rel="stylesheet" href="{% static "blog/home_page.css" %}">
+<!-- End Block-->
+{% endblock css_file %} {% block body %}
+
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/IMG_4534.jpeg" %}" alt="Profile Picture"/>
+    <h2>ROEI'S BLOG</h2>
+  </header>
+  <p>
+    This is paragraph about myself and what i am going to talk about in the blog
+  </p>
+</section>
+<section id="latest-posts">
+  <h2>Latest Posts</h2>
+
+  <ul>
+    {% for post in latest_posts %}
+    <!--Include post data for each of the 3 latest posts-->
+    {% include "blog/includes/post.html" with post_data=post %} {% endfor %}
+  </ul>
+</section>
+
+<section id="description">
+  <h2>About me</h2>
+  <p>
+    I am a Monitoring solutions engineer, a handball player and an MSC studen at
+    Reichman University.
+  </p>
+  <p>Working on my django skills, maybe improving Fronend skills as well</p>
+</section>
+
 {% endblock body %}
