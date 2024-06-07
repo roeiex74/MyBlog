@@ -25,10 +25,10 @@ A Python-based blog, which utilizes Django capabilities. A fun and interactive b
 
    **Activate venv**
 
-   ##### On Linux/MacOS
+   ##### On Linux/MacOS use
 
    ```bash
-   use source django_site/bin/activate
+    source django_site/bin/activate
    ```
 
    ##### On Windows use
