@@ -2,8 +2,9 @@ __pycache__
 # Ignore the virtual environment folder
 django_site/
 
-# Ignore collected static files
-static/
+# Ignore collected static files 
+staticfiles/
+
 
 # Ignore other temporary files
 *.log

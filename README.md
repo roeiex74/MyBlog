@@ -50,7 +50,11 @@ A Python-based blog, which utilizes Django capabilities. A fun and interactive b
     python manage.py migrate
    ```
 
-5. **Run Development Server**
+5. **Collect static files**
+   ```bash
+   python manage.py collectstatic
+   ```
+6. **Run Development Server**
    ```bash
    python manage.py runserver
    ```
