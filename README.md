@@ -20,8 +20,10 @@ A Python-based blog, which utilizes Django capabilities. A fun and interactive b
    2.1 **Create venv**
    python -m venv django_site
    2.2 **Activate venv**
-   # On Linux/MacOS use source django_site/bin/activate
-   # On Windows use `django_site\Scripts\activate`
+   ##### On Linux/MacOS
+   use source django_site/bin/activate
+   ##### On Windows use
+   `django_site\Scripts\activate`
 
 3.**Install Dependencies**
 
