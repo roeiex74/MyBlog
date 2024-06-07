@@ -13,29 +13,47 @@ A Python-based blog, which utilizes Django capabilities. A fun and interactive b
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/roeiex74/MyBlog.git
+   cd MyBlog
    ```
 2. **Optional - Set up a virtual environment**
-   2.1 **Create venv**
+   **Create venv**
+
+   ```bash
    python -m venv django_site
-   2.2 **Activate venv**
+   ```
+
+   **Activate venv**
+
    ##### On Linux/MacOS
+
+   ```bash
    use source django_site/bin/activate
+   ```
+
    ##### On Windows use
-   `django_site\Scripts\activate`
 
-3.**Install Dependencies**
+   ```cmd
+   django_site\Scripts\activate
+   ```
 
-    'pip install -r requirements.txt
+3. **Install Dependencies**
 
-4.**Optional - Migrate DB to set up a new DB**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-    # python manage.py makemigrations
-    # python manage.py migrate
+4. **Optional - Migrate DB to set up a new DB**
+
+   ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+   ```
 
 5. **Run Development Server**
+   ```bash
    python manage.py runserver
+   ```
 
 ## Usage
 
